@@ -1,0 +1,135 @@
+---
+title: Changelog
+description: Track the latest updates, new features, and improvements in Саша Фелюгин.
+---
+
+## Overview
+
+Stay informed about the latest releases of Саша Фелюгин. This changelog lists new features, improvements, bug fixes, and any breaking changes. Check here before upgrading to ensure smooth transitions.
+
+<Callout kind="info">
+  Subscribe to our RSS feed or join the community Discord for instant notifications about new releases.
+</Callout>
+
+## Recent Releases
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time collaboration for documentation editing
+- Introduced dark mode toggle in the dashboard
+- New export options: PDF and Markdown bundles
+
+## Improvements
+
+- Enhanced search performance by `>50%`
+- Better mobile responsiveness across all pages
+
+## Bug Fixes
+
+- Fixed authentication token refresh issues
+- Resolved editor crashes on large documents
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Integrated version history with diff viewer
+- Added custom themes for documentation pages
+
+## Bug Fixes
+
+- Patched security vulnerability in file uploads (CVE-2024-XXXX)
+- Fixed sidebar navigation glitches on Safari
+
+## Improvements
+
+- Optimized image loading for faster page renders
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## Initial Release
+
+- Core documentation management system
+- User authentication with JWT tokens
+- Rich text editor with MDX support
+
+## Breaking Changes
+
+- Migrated from v0.x config format to new schema
+
+</Update>
+
+## Upgrade Instructions
+
+Follow these steps to upgrade Саша Фелюгин to the latest version. Always back up your data first.
+
+<Steps>
+  <Step title="Backup Your Data" icon="database">
+
+  Export your projects via the dashboard at `https://dashboard.example.com/export`.
+
+  </Step>
+  <Step title="Update Package" icon="package">
+
+  <CodeGroup tabs="npm,yarn">
+  ````bash
+  npm install sasha-felyugin@latest
+  ````
+  ````bash
+  yarn add sasha-felyugin@latest
+  ````
+  </CodeGroup>
+
+  </Step>
+  <Step title="Run Migrations" icon="settings">
+
+  If upgrading from v1.0.0, run the migration script:
+
+  ````bash
+  npx sasha-felyugin migrate
+  ````
+
+  </Step>
+  <Step title="Restart Service" icon="refresh-cw">
+
+  Restart your application server and verify at `https://dashboard.example.com`.
+
+  </Step>
+</Steps>
+
+<Callout kind="alert" title="Breaking Changes">
+  v1.2.0 introduces config schema updates. Review the [migration guide](#) for details on `{oldConfig}` to `{newConfig}` changes.
+</Callout>
+
+## Quick Summary
+
+<Columns cols={3}>
+  <Card title="v1.2.0 Highlights" icon="zap" href="#recent-releases">
+    Collaboration and dark mode now live.
+  </Card>
+  <Card title="Security Patches" icon="shield" href="#recent-releases">
+    Latest fixes address key vulnerabilities.
+  </Card>
+  <Card title="Get Started" icon="rocket" href="/quickstart">
+    Upgrade now for the best experience.
+  </Card>
+</Columns>
+
+<Expandable title="Detailed Migration Guide" default-open="false">
+
+For complex setups, update your environment variables:
+
+| Variable          | Old Name       | New Name          | Default     |
+|-------------------|----------------|-------------------|-------------|
+| `API_URL`         | `BASE_URL`     | `API_ENDPOINT`    | `https://api.example.com` |
+| `DOCS_TOKEN`      | `AUTH_KEY`     | `ACCESS_TOKEN`    | `YOUR_TOKEN` |
+
+Run `sasha-felyugin config check` to validate.
+
+</Expandable>
